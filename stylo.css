@@ -1,5 +1,5 @@
 * {
-    margin:0;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -9,13 +9,43 @@ body {
     color: #333;
     font-family: 'Poppins', sans-serif;
     height: 100vh;
+    background-image: url(https://picsum.photos/1200);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body::after {
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(8,170,13,1)), color-stop(100%,rgba(8,170,13,0)));
+    content: '';
+    display: block;
+    position: fixed;
+    left: 0;
+    height: 100%;
+    top: 0px;
+    width: 100%;
+}
+
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 1;
+    position: relative;
+}
+
+.todo-wrap {
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 10px;
+    margin: 10em 0;
 }
 
 header {
     font-size: 1.5rem;
 }
 
-header, form {
+form {
     min-height: 20vh;
     display: flex;
     justify-content: center;
@@ -23,13 +53,14 @@ header, form {
 }
 
 
-form input, form button {
+form input,
+form button {
     padding: 1em;
     border: none;
 }
 
 form button {
-    background-color:#ffc107;
+    background-color: #ffc107;
     cursor: pointer;
     transition: all .3s ease;
 }
@@ -59,7 +90,8 @@ form button {
     padding: 0 .5em;
 }
 
-.complete-btn, .delete-btn {
+.complete-btn,
+.delete-btn {
     padding: .7em;
     border: none;
     font-size: .85rem;
@@ -69,14 +101,15 @@ form button {
 }
 
 .complete-btn {
-    background-color:#4CAF50;
+    background-color: #4CAF50;
 }
 
 .delete-btn {
     background-color: #f44336;
 }
 
-.fa-trash, .fa-check {
+.fa-trash,
+.fa-check {
     pointer-events: none;
 }
 
@@ -112,5 +145,3 @@ select {
     padding: .9em;
     position: relative;
 }
-
-
